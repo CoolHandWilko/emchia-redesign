@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emchia — Industry Leading HSE Licensed Asbestos Removal Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1a2744;
+  --navy-dark: #0f1a2e;
+  --navy-deep: #0b1422;
+  --teal: #009BA4;
+  --teal-hover: #00b3bd;
+  --white: #ffffff;
+  --off-white: #f7f7f7;
+  --text-dark: #1a1a2e;
+  --text-body: #555566;
+  --text-light: #7a8a9a;
+  --border-light: #e4e4e4;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:var(--text-dark);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ── TOP BAR ── */
+.top-bar{background:var(--navy-dark);color:rgba(255,255,255,0.8);display:flex;justify-content:space-between;align-items:center;padding:10px 40px;font-size:13px}
+.top-bar a{color:rgba(255,255,255,0.8);transition:color .2s}
+.top-bar a:hover{color:white}
+.top-bar-right{display:flex;gap:12px}
+.top-bar-right a{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s}
+.top-bar-right a:hover{border-color:white;color:white}
+
+/* ── NAV ── */
+.navbar{background:var(--white);position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(0,0,0,0.06);box-shadow:0 1px 8px rgba(0,0,0,0.04)}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 40px}
+.logo-img{height:58px}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:13px;color:var(--navy);padding:8px 16px;border-radius:4px;transition:color .2s;letter-spacing:0.01em}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--navy)!important;color:white!important;padding:10px 24px!important;border-radius:6px!important;font-weight:700!important;transition:all .25s!important}
+.nav-cta:hover{background:var(--navy-dark)!important;transform:translateY(-1px);box-shadow:0 4px 15px rgba(26,39,68,0.3)}
+
+/* ── HERO WITH SLIDESHOW ── */
+.hero{position:relative;min-height:620px;display:flex;align-items:center;padding:60px 40px 100px;overflow:hidden;background:var(--navy-dark)}
+.hero-slideshow{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.5s ease-in-out}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover;opacity:0.25}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,26,46,0.92) 0%,rgba(26,39,68,0.84) 50%,rgba(11,20,34,0.88) 100%);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.hero-text{color:white}
+.hero-title{font-size:46px;font-weight:800;line-height:1.12;margin-bottom:24px;letter-spacing:-0.02em}
+.hero-title .highlight{color:var(--teal)}
+.hero-desc{font-size:16px;line-height:1.8;color:rgba(255,255,255,0.72);margin-bottom:32px;max-width:520px}
+.hero-buttons{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-teal{display:inline-block;background:var(--teal);color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:14px 28px;border-radius:6px;transition:all .25s}
+.btn-teal:hover{background:var(--teal-hover);transform:translateY(-1px);box-shadow:0 4px 15px rgba(0,155,164,0.3)}
+.btn-outline{display:inline-block;border:2px solid rgba(255,255,255,0.3);color:white;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:6px;transition:all .25s}
+.btn-outline:hover{border-color:white;background:rgba(255,255,255,0.05)}
+
+/* Hero right side image card */
+.hero-image-wrapper{position:relative;padding-bottom:20px}
+.hero-image{border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+.hero-image img{width:100%;height:400px;object-fit:cover}
+.hse-badge{position:absolute;bottom:0;left:50%;transform:translateX(-50%);background:white;border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 20px rgba(0,0,0,0.12);white-space:nowrap;z-index:3}
+.hse-icon{background:var(--navy);color:white;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px}
+.hse-text{font-size:13px}
+.hse-text strong{display:block;font-weight:700;color:var(--text-dark)}
+.hse-text span{color:var(--text-light);font-size:12px}
+
+/* Stats */
+.stats-bar{background:var(--navy-dark);padding:30px 40px;border-top:1px solid rgba(255,255,255,0.06)}
+.stats-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;gap:30px}
+.stat-number{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:800;color:white;line-height:1}
+.stat-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-top:6px}
+.stat-divider{width:1px;background:rgba(255,255,255,0.1);align-self:stretch}
+
+/* ── CLIENTS ── */
+.clients-section{padding:50px 40px;border-bottom:1px solid var(--border-light)}
+.clients-inner{max-width:1280px;margin:0 auto;text-align:center}
+.clients-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;color:var(--text-light);margin-bottom:30px}
+.client-logos{display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap}
+.client-logos img{height:55px;filter:grayscale(100%);opacity:0.5;transition:all .3s}
+.client-logos img:hover{filter:grayscale(0%);opacity:1}
+
+/* ── ABOUT ── */
+.about-section{padding:80px 40px}
+.about-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.section-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--teal);background:rgba(0,155,164,0.08);border:1px solid rgba(0,155,164,0.2);padding:5px 14px;border-radius:4px;margin-bottom:16px}
+.about-title{font-size:38px;font-weight:800;line-height:1.15;color:var(--text-dark);margin-bottom:20px}
+.about-text{font-size:15px;line-height:1.8;color:var(--text-body);margin-bottom:16px}
+.about-image{border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.about-image img{width:100%;height:420px;object-fit:cover}
+
+/* ── SECTORS ── */
+.sectors-section{padding:80px 40px;background:var(--off-white)}
+.sectors-inner{max-width:1280px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:50px}
+.section-header .section-badge{background:white;border:1px solid var(--border-light);color:var(--navy)}
+.section-title{font-size:36px;font-weight:800;color:var(--text-dark);margin-bottom:14px}
+.section-subtitle{font-size:15px;line-height:1.7;color:var(--text-body);max-width:600px;margin:0 auto}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.sector-card{position:relative;border-radius:14px;overflow:hidden;height:380px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform .3s,box-shadow .3s}
+.sector-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.15)}
+.sector-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.sector-card:hover img{transform:scale(1.05)}
+.sector-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,20,34,0.85) 0%,rgba(11,20,34,0.1) 50%,transparent 100%)}
+.sector-card-content{position:absolute;bottom:0;left:0;right:0;padding:28px}
+.sector-name{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:white;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:6px}
+.sector-link{color:var(--teal);font-size:13px;font-weight:600;opacity:0;transform:translateY(8px);transition:all .3s}
+.sector-card:hover .sector-link{opacity:1;transform:translateY(0)}
+
+/* ── LOCATIONS ── */
+.locations-section{padding:80px 40px}
+.locations-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.location-card{padding:18px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center}
+.location-dot{width:10px;height:10px;border-radius:50%;background:var(--navy);margin-right:14px;flex-shrink:0}
+.location-info{display:flex;align-items:center;flex:1}
+.location-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--text-dark)}
+.location-address{font-size:13px;color:var(--text-light);margin-top:2px}
+.location-phone{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14px;color:var(--text-dark);white-space:nowrap}
+
+/* UK Map */
+.uk-map-container{display:flex;justify-content:center}
+
+/* ── TEAM ── */
+.team-section{padding:80px 40px;background:var(--off-white)}
+.team-inner{max-width:1280px;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+.team-card{border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform .3s;display:flex;flex-direction:column}
+.team-card:hover{transform:translateY(-4px)}
+.team-photo{height:320px;overflow:hidden;flex-shrink:0}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .4s}
+.team-card:hover .team-photo img{transform:scale(1.03)}
+.team-info{background:var(--navy-dark);color:white;padding:28px 24px;flex:1;display:flex;flex-direction:column}
+.team-name{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.team-role{color:var(--teal);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+.team-bio{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:18px;flex:1}
+.experience-badge{display:inline-block;border:1.5px solid var(--teal);color:var(--teal);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;padding:5px 14px;border-radius:4px;align-self:flex-start}
+
+/* ── ACCREDITATIONS ── */
+.accreditations-section{padding:70px 40px;background:var(--white)}
+.accreditations-inner{max-width:1280px;margin:0 auto;text-align:center}
+.accreditations-title{font-size:32px;font-weight:800;color:var(--text-dark);margin-bottom:40px}
+.accreditation-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.accreditation-logos img{height:70px;transition:transform .3s}
+.accreditation-logos img:hover{transform:scale(1.08)}
+
+/* ── CTA ── */
+.cta-section{padding:80px 40px}
+.cta-inner{max-width:760px;margin:0 auto;background:var(--navy-dark);border-radius:20px;padding:60px 50px;text-align:center;box-shadow:0 12px 50px rgba(11,20,34,0.3)}
+.cta-title{font-size:34px;font-weight:800;color:white;margin-bottom:16px}
+.cta-desc{font-size:15px;line-height:1.7;color:rgba(255,255,255,0.6);margin-bottom:30px;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-contact-info{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:24px;flex-wrap:wrap}
+.cta-contact-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:14px}
+.cta-contact-item svg{width:18px;height:18px;fill:rgba(255,255,255,0.5)}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy-dark);color:white;padding:70px 40px 30px}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-logo{height:48px}
+.footer-brand-text{font-size:14px;line-height:1.7;color:rgba(255,255,255,0.5);margin-top:16px}
+.footer-heading{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;color:white}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,0.5);transition:color .2s}
+.footer-links a:hover{color:var(--teal)}
+.footer-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:rgba(255,255,255,0.35)}
+.footer-bottom-links{display:flex;gap:24px}
+.footer-bottom-links a{color:rgba(255,255,255,0.35);transition:color .2s}
+.footer-bottom-links a:hover{color:rgba(255,255,255,0.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-content,.about-inner,.locations-inner{grid-template-columns:1fr}
+  .hero-image-wrapper{display:none}
+  .sectors-grid,.team-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:30px}
+  .stats-inner{flex-wrap:wrap}
+  .stat-divider{display:none}
+}
+@media(max-width:768px){
+  .top-bar{padding:8px 20px;font-size:12px}
+  .nav-inner{padding:10px 20px}
+  .nav-links a{font-size:11px;padding:6px 10px}
+  .hero{padding:40px 20px 60px;min-height:auto}
+  .hero-title{font-size:32px}
+  .stats-inner{gap:20px}
+  .stat-number{font-size:26px}
+  .sectors-grid,.team-grid{grid-template-columns:1fr}
+  .about-section,.sectors-section,.locations-section,.team-section,.accreditations-section,.cta-section{padding:50px 20px}
+  .footer{padding:50px 20px 20px}
+  .footer-inner{grid-template-columns:1fr;gap:30px}
+  .cta-inner{padding:40px 24px}
+  .cta-title{font-size:26px}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .client-logos{gap:30px}
+  .client-logos img{height:40px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div>Tel: 0161 706 0246 | <a href="mailto:admin@emchia.co.uk">admin@emchia.co.uk</a></div>
+  <div class="top-bar-right">
+    <a href="https://uk.linkedin.com/company/emchia-asbestos-solutions-ltd" aria-label="LinkedIn">in</a>
+    <a href="https://www.facebook.com/emchia.as" aria-label="Facebook">f</a>
+    <a href="https://www.instagram.com/emchiaasbestossolutions/" aria-label="Instagram">✦</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#">
+      <img src="https://static.wixstatic.com/media/118902_bbc882d018a14fafbaa7db2c8b568494~mv2.png/v1/fill/w_302,h_134,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Emchia%20Logo%20NEW.png" alt="Emchia" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#about">ABOUT US</a></li>
+      <li><a href="#sectors">OUR SECTORS</a></li>
+      <li><a href="#clients">OUR CLIENTS</a></li>
+      <li><a href="#">SOCIAL</a></li>
+      <li><a href="#">VACANCIES</a></li>
+      <li><a href="#contact" class="nav-cta">CONTACT US</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO WITH SLIDESHOW -->
+<section class="hero">
+  <div class="hero-slideshow">
+    <div class="hero-slide active">
+      <img src="https://static.wixstatic.com/media/118902_a8f11f526b754d0fb2fed01213ca5a71~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,enc_avif,quality_auto/118902_a8f11f526b754d0fb2fed01213ca5a71~mv2.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="https://static.wixstatic.com/media/118902_1ac944c69770438480e59f261997b0a5~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,enc_avif,quality_auto/118902_1ac944c69770438480e59f261997b0a5~mv2.jpg" alt="">
+    </div>
+    <div class="hero-slide">
+      <img src="https://static.wixstatic.com/media/118902_5faedccc0fa44aa0ba34213f10ed9bea~mv2.jpg/v1/fill/w_1920,h_1080,al_c,q_85,enc_avif,quality_auto/FLHSBuilding7.jpg" alt="">
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Industry Leading <span class="highlight">HSE Licensed</span> Asbestos Removal Specialists</h1>
+      <p class="hero-desc">With over 25 years of industry expertise, Emchia Asbestos Solutions Ltd have built a trusted, HSE-licensed asbestos removal and abatement service. Since 2016, we have successfully delivered safe, compliant, and high-quality projects across the UK.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-teal">Make an Enquiry →</a>
+        <a href="#sectors" class="btn-outline">Our Sectors</a>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <div class="hero-image">
+        <img src="https://static.wixstatic.com/media/118902_a8f11f526b754d0fb2fed01213ca5a71~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/118902_a8f11f526b754d0fb2fed01213ca5a71~mv2.jpg" alt="Emchia project site">
+      </div>
+      <div class="hse-badge">
+        <div class="hse-icon">HSE</div>
+        <div class="hse-text">
+          <strong>Fully Licensed</strong>
+          <span>Health &amp; Safety Executive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS - more facts -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="stat-number">25+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-divider"></div>
+    <div><div class="stat-number">£5M+</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat-divider"></div>
+    <div><div class="stat-number">3</div><div class="stat-label">UK Offices</div></div>
+    <div class="stat-divider"></div>
+    <div><div class="stat-number">100%</div><div class="stat-label">Compliance Record</div></div>
+    <div class="stat-divider"></div>
+    <div><div class="stat-number">24/7</div><div class="stat-label">Emergency Response</div></div>
+  </div>
+</div>
+
+<!-- CLIENTS -->
+<section class="clients-section" id="clients">
+  <div class="clients-inner">
+    <div class="clients-label">Trusted By Industry Leaders</div>
+    <div class="client-logos">
+      <img src="https://static.wixstatic.com/media/118902_def3a561631846d7bdead6acf7b4c7d3~mv2.jpg/v1/fill/w_280,h_140,al_c,q_80,enc_avif,quality_auto/bam.jpg" alt="BAM">
+      <img src="https://static.wixstatic.com/media/118902_7e04e4847708450d82a1c547f33d3e4a~mv2.png/v1/fill/w_388,h_140,al_c,q_85,enc_avif,quality_auto/Ford_logo_flat_svg.png" alt="Ford">
+      <img src="https://static.wixstatic.com/media/118902_02953da821af45d9bedfb08efee6dd18~mv2.png/v1/fill/w_280,h_140,al_c,q_85,enc_avif,quality_auto/arcadis-11.png" alt="Arcadis">
+      <img src="https://static.wixstatic.com/media/118902_795e4c297fd145eab0735519684e4ff4~mv2.jpg/v1/fill/w_320,h_160,al_c,q_80,enc_avif,quality_auto/Premier%20Inn.jpg" alt="Premier Inn">
+      <img src="https://static.wixstatic.com/media/118902_b8dea83cc3b54119b9479f2f563d020b~mv2.jpg/v1/fill/w_280,h_140,al_c,q_80,enc_avif,quality_auto/NHS-Logo.jpg" alt="NHS">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-badge">ABOUT US</div>
+      <h2 class="about-title">Efficient, Cost-Effective Asbestos Abatement Solutions</h2>
+      <p class="about-text">As industry leaders, we provide efficient, cost-effective asbestos abatement solutions tailored to the needs of every project, from small-scale works to complex, large-scale operations.</p>
+      <p class="about-text">With our Head Office in Chorley and regional offices in both the Midlands and London, we deliver licensed asbestos removal throughout the UK — including Manchester, London, Birmingham, Leeds and surrounding areas.</p>
+      <a href="#" class="btn-teal" style="margin-top:12px">Areas We Cover →</a>
+    </div>
+    <div class="about-image">
+      <img src="https://static.wixstatic.com/media/118902_22111c3b26ff43ad80b005487587e6a0~mv2.jpg/v1/fill/w_800,h_600,al_c,q_80,enc_avif,quality_auto/118902_22111c3b26ff43ad80b005487587e6a0~mv2.jpg" alt="Emchia site with branded hoarding">
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors-section" id="sectors">
+  <div class="sectors-inner">
+    <div class="section-header">
+      <div class="section-badge">OUR SECTORS</div>
+      <h2 class="section-title">Specialists Across Every Sector</h2>
+      <p class="section-subtitle">From social housing to industrial facilities, we deliver safe and compliant asbestos removal tailored to your industry.</p>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_90cf47dab8124692aef279a235205164~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/IMG-20190918-WA0003.jpg" alt="Social Housing">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Social Housing</div><div class="sector-link">Learn More →</div></div>
+      </div>
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_702c0da595d6460da7fdadbbf988b33e~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/IMG_4591.jpg" alt="Commercial">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Commercial</div><div class="sector-link">Learn More →</div></div>
+      </div>
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_97ec4068309e4512b577d36a7eef0d6e~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/IMG-20190425-WA0029.jpg" alt="Healthcare">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Healthcare</div><div class="sector-link">Learn More →</div></div>
+      </div>
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_5faedccc0fa44aa0ba34213f10ed9bea~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/FLHSBuilding7.jpg" alt="Industrial">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Industrial</div><div class="sector-link">Learn More →</div></div>
+      </div>
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_fbb0230f8f0349c8957129f8219f7ed8~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/istockphoto-168720793-612x612.jpg" alt="Education">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Education</div><div class="sector-link">Learn More →</div></div>
+      </div>
+      <div class="sector-card">
+        <img src="https://static.wixstatic.com/media/118902_5de8da2a1b7f48129fba398d1dd8d84c~mv2.jpg/v1/fill/w_600,h_750,al_c,q_80,enc_avif,quality_auto/Land-Remediation-banner.jpg" alt="Remediation">
+        <div class="sector-card-overlay"></div>
+        <div class="sector-card-content"><div class="sector-name">Remediation</div><div class="sector-link">Learn More →</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE LOCATIONS -->
+<section class="locations-section" id="locations">
+  <div class="locations-inner">
+    <div>
+      <div class="section-badge">NATIONWIDE SERVICE</div>
+      <h2 class="about-title">Office Locations</h2>
+      <p class="about-text" style="margin-bottom:30px">With strategically positioned teams across the UK, we deliver a fast, reliable asbestos removal service, wherever your project is located.</p>
+      <div class="location-card">
+        <div class="location-info">
+          <div class="location-dot"></div>
+          <div>
+            <div class="location-name">North West (Head Office)</div>
+            <div class="location-address">Sterling House, 2–4 Mill Lane, Whittle-le-Woods, Chorley, PR6 7LX</div>
+          </div>
+        </div>
+        <div class="location-phone">0161 706 0246</div>
+      </div>
+      <div class="location-card">
+        <div class="location-info">
+          <div class="location-dot"></div>
+          <div>
+            <div class="location-name">Midlands</div>
+            <div class="location-address">The Apex, 2 Sheriffs Orchard, Coventry, CV1 3PP</div>
+          </div>
+        </div>
+        <div class="location-phone">024 7736 0046</div>
+      </div>
+      <div class="location-card">
+        <div class="location-info">
+          <div class="location-dot"></div>
+          <div>
+            <div class="location-name">London</div>
+            <div class="location-address">Kemp House, 152 City Rd, London, EC1V 2NX</div>
+          </div>
+        </div>
+        <div class="location-phone">0207 867 3929</div>
+      </div>
+    </div>
+
+    <!-- UK Map SVG - matching original design screenshot -->
+    <div class="uk-map-container">
+      <svg viewBox="0 0 400 620" width="340" xmlns="http://www.w3.org/2000/svg">
+        <!-- England & Wales silhouette - clean stylised shape matching original -->
+        <path d="M205 10c8-2 18 2 24 10 5 7 8 16 6 24-3 8-9 14-10 22 0 8 5 15 12 20 6 5 14 8 18 15 3 7 1 16-4 22-5 5-12 8-15 14-3 7 0 15 5 21s12 10 15 17c2 7-1 15-7 20-5 4-12 6-16 11s-4 13 0 19 12 10 16 16c3 6 2 14-3 19s-12 7-17 11-8 12-5 19c4 7 11 11 14 18 3 8 0 17-6 22-5 5-13 6-18 10s-8 12-5 18c3 7 10 11 12 18 2 8-2 16-8 21-6 4-14 5-19 9-5 5-7 13-4 20 4 7 11 12 13 20 2 7-1 15-6 20s-13 7-18 12c-4 5-5 13-2 19s10 10 12 17c2 7 0 15-5 20-6 6-14 8-20 13-4 4-7 9-7 15s3 12 3 18c-1 7-5 14-12 17-7 2-15-1-20-6-4-5-6-12-10-17-5-5-13-8-19-7-7 1-12 6-17 10-5 3-11 5-16 3-6-2-9-8-14-11-6-3-13-4-18-2s-9 8-10 14c-1 5 1 10 0 16-1 5-5 10-10 12s-11 1-15-3-7-10-7-16c0-5 3-10 3-16 0-5-3-10-7-13-5-3-11-3-16-5-4-3-7-8-7-14 1-6 5-11 8-16s5-11 3-17-8-10-14-12c-5-2-11-2-15-5-5-4-7-10-6-16s5-12 7-18c1-6 0-12-4-16-4-5-10-7-14-11-3-5-4-12-1-17 4-5 10-8 14-13 3-5 4-12 1-17-3-6-9-9-12-14-3-6-3-14 1-19 4-5 11-7 15-11 4-5 6-12 4-18s-7-10-12-13c-4-3-9-5-12-9-3-5-3-12 0-17 4-5 10-8 14-13 3-5 4-11 2-17-3-6-8-10-12-15-3-5-4-12-1-18 3-5 9-8 14-11 6-3 12-5 16-10 3-5 3-12 0-17-4-5-10-8-13-13s-3-13 1-18c4-6 11-8 16-12 4-4 6-10 5-16-2-6-7-10-9-15-2-6-1-13 3-18s10-7 16-9c7-2 14 0 20 3 6 4 12 8 19 8 6 0 12-4 18-6z"
+        fill="#d6e0ec" stroke="#b8c8da" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Scotland addition -->
+        <path d="M205 10c-6-4-13-6-20-3-6 2-12 7-16 9-4 5-5 12-3 18 2 5 7 9 9 15 1 6-1 12-5 16-5 4-12 6-16 12-4 5-4 13-1 18 3 5 9 8 13 13 3 5 4 12 0 17-4 5-10 7-16 10l8-1c6-2 10-7 15-10 5-4 12-5 18-3 5 2 9 7 14 8 6 1 12-1 16-5 3-4 4-9 7-13 4-5 10-8 14-13 3-4 3-10 1-15-3-5-8-8-10-14-2-5-1-12 2-16 4-5 10-7 13-12 2-5 1-11-3-15-4-3-10-4-14-2-5 2-8 6-12 8-5 2-11 1-15-2z"
+        fill="#d6e0ec" stroke="#b8c8da" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Chorley pin - positioned in Lancashire/NW England (53.65°N) -->
+        <circle cx="178" cy="295" r="9" fill="#009BA4" stroke="white" stroke-width="3.5"/>
+        <rect x="196" y="280" width="70" height="30" rx="5" fill="white" filter="url(#shadow)"/>
+        <text x="210" y="293" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#1a2744">Chorley</text>
+        <text x="202" y="306" font-family="Open Sans,sans-serif" font-size="9" fill="#7a8a9a">Head Office</text>
+
+        <!-- Coventry pin - positioned in West Midlands (52.41°N) -->
+        <circle cx="220" cy="385" r="9" fill="#009BA4" stroke="white" stroke-width="3.5"/>
+        <rect x="238" y="370" width="78" height="30" rx="5" fill="white" filter="url(#shadow)"/>
+        <text x="249" y="383" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#1a2744">Coventry</text>
+        <text x="252" y="396" font-family="Open Sans,sans-serif" font-size="9" fill="#7a8a9a">Midlands</text>
+
+        <!-- London pin - positioned in SE England (51.5°N) -->
+        <circle cx="248" cy="445" r="9" fill="#009BA4" stroke="white" stroke-width="3.5"/>
+        <rect x="266" y="430" width="90" height="30" rx="5" fill="white" filter="url(#shadow)"/>
+        <text x="280" y="443" font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#1a2744">London</text>
+        <text x="271" y="456" font-family="Open Sans,sans-serif" font-size="9" fill="#7a8a9a">Regional Office</text>
+
+        <defs>
+          <filter id="shadow" x="-10%" y="-10%" width="130%" height="140%">
+            <feDropShadow dx="0" dy="1" stdDeviation="3" flood-opacity="0.1"/>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="team-inner">
+    <div class="section-header">
+      <div class="section-badge" style="background:white;border:1px solid #e4e4e4;color:#1a2744">ABOUT US</div>
+      <h2 class="section-title">Meet the Team</h2>
+      <p class="section-subtitle">A combined 65+ years of asbestos industry expertise driving safe and compliant project delivery.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="https://static.wixstatic.com/media/118902_97321f17c9f14e34b9d0a12a863f45fb~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/LukePhoto.jpg" alt="Luke Gumbley"></div>
+        <div class="team-info">
+          <div class="team-name">Luke Gumbley (MAMI)</div>
+          <div class="team-role">Director</div>
+          <p class="team-bio">Oversees the planning and implementation of company policies and procedures, driving strategic growth with a portfolio of removal works in excess of £5M. NEBOSH qualified with distinction.</p>
+          <div class="experience-badge">24+ Years Experience</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://static.wixstatic.com/media/118902_0f43dc564e1841bd9fa00893e99b6d4e~mv2.jpeg/v1/fill/w_600,h_600,al_c,q_80,enc_avif,quality_auto/DarylPhoto.jpeg" alt="Daryl Birchall"></div>
+        <div class="team-info">
+          <div class="team-name">Daryl Birchall (MAMI)</div>
+          <div class="team-role">Director</div>
+          <p class="team-bio">Successfully managed large-scale projects across nuclear, industrial, and retail sectors. Portfolio includes overseeing asbestos removal works exceeding £3.5M.</p>
+          <div class="experience-badge">25+ Years Experience</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://static.wixstatic.com/media/118902_9bc0fcf908964d768cde12b7eb36cf10~mv2.png/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/OlliePhoto1.png" alt="Ollie Cayley"></div>
+        <div class="team-info">
+          <div class="team-name">Ollie Cayley BSc (Hons)</div>
+          <div class="team-role">Director</div>
+          <p class="team-bio">Leads financial planning and reporting, managing project costs from initial estimates through to final valuations. Quantity Surveying background.</p>
+          <div class="experience-badge">17+ Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCREDITATIONS -->
+<section class="accreditations-section">
+  <div class="accreditations-inner">
+    <h2 class="accreditations-title">Our Accreditations</h2>
+    <div class="accreditation-logos">
+      <img src="https://static.wixstatic.com/media/ea7dd5_785e53773bfa4cf2b30269322dce3daf~mv2.png/v1/fill/w_230,h_280,al_c,q_85,enc_avif,quality_auto/ISO-9001.png" alt="ISO 9001">
+      <img src="https://static.wixstatic.com/media/ea7dd5_8e077f20f5a64e0aad79e8d208188ea4~mv2.png/v1/fill/w_230,h_280,al_c,q_85,enc_avif,quality_auto/ISO-14001.png" alt="ISO 14001">
+      <img src="https://static.wixstatic.com/media/ea7dd5_e217a1ed1a5f42098719b3280c24ffba~mv2.png/v1/fill/w_230,h_280,al_c,q_85,enc_avif,quality_auto/ISO-%2045001.png" alt="ISO 45001">
+      <img src="https://static.wixstatic.com/media/ea7dd5_fdb01a976f364fbc883a6c9adbe71e26~mv2.png/v1/fill/w_304,h_242,al_c,q_85,enc_avif,quality_auto/LW__3_%20LW%20Employer.png" alt="Real Living Wage Employer">
+      <img src="https://static.wixstatic.com/media/118902_4ae509109fd34588aa6df685ecb0de9d~mv2.png/v1/fill/w_514,h_242,al_c,q_85,enc_avif,quality_auto/118902_4ae509109fd34588aa6df685ecb0de9d~mv2.png" alt="Cyber Essentials">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to Discuss Your Project?</h2>
+    <p class="cta-desc">For all general enquiries, please contact our head office. Our team is ready to help with projects of any scale.</p>
+    <a href="tel:01617060246" class="btn-teal">Call 0161 706 0246 →</a>
+    <div class="cta-contact-info">
+      <div class="cta-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        admin@emchia.co.uk
+      </div>
+      <div class="cta-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Chorley · Coventry · London
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <img src="https://static.wixstatic.com/media/118902_bbc882d018a14fafbaa7db2c8b568494~mv2.png/v1/fill/w_302,h_134,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Emchia%20Logo%20NEW.png" alt="Emchia" class="footer-logo">
+      <p class="footer-brand-text">Industry leading HSE licensed asbestos removal specialists. Delivering safe, compliant solutions across the UK since 2016.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Sectors</div>
+      <ul class="footer-links">
+        <li><a href="#">Social Housing</a></li>
+        <li><a href="#">Commercial</a></li>
+        <li><a href="#">Healthcare</a></li>
+        <li><a href="#">Industrial</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Remediation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Areas We Cover</a></li>
+        <li><a href="#">Office Locations</a></li>
+        <li><a href="#">Vacancies</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:01617060246">0161 706 0246</a></li>
+        <li><a href="mailto:admin@emchia.co.uk">admin@emchia.co.uk</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Carbon Reduction Plan</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Emchia Asbestos Solutions Ltd. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Areas We Cover</a>
+      <a href="#">Carbon Reduction Plan</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Slideshow script -->
+<script>
+const slides = document.querySelectorAll('.hero-slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 5000);
+</script>
+
+</body>
+</html>
